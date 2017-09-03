@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 
-def error(aprox,exac):
+def absoluto(aprox,exac):
     """ Calcula el error de aproximacion.
     Args:
         aprox: 

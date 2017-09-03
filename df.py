@@ -3,6 +3,7 @@
     de diferencias finitas
 """
 import numpy as np
+import pandas as pd
 
 def fx(ux,x):
     """ Evalua una expresion en formato tipo python.
@@ -68,8 +69,7 @@ def center(ux,x,h):
     """
     c1 = ux.replace("x","(x+h)")
     c2 = ux.replace("x","(x-h)")
-    u = "1/2*("+ c1 + "-" + c2 + ")/h"
-    return eval(u)
+    return (eval(c1) - eval(c2))/2*h
 
 def d3(ux,x,h):
     """  Utiliza la aproximación de diferencias finitas
@@ -115,7 +115,4 @@ def d31(ux,x,h):
 
 
 def showAprox(h,fd,bd,cr,dl,dh):
-    print("APROXIMACIONES")
-    print("h\tforward\tbackforward\tcenter\ttrespuntos\ttrespuntos")
-    for i in range(0,len(h)):
-        print(h[i],"\t",fd[i],"\t",bd[i],"\t",cr[i],"\t",dl[i],"\t",dh[i])
+    pass
